@@ -1,0 +1,16 @@
+.header
+  +position(fixed, 0, 0, auto, 0)
+  height: 48px
+  line-height: 48px
+  background: $black
+  border-bottom: 10px solid $purple-dark
+  +font(16px, $gray-dark, 'helvetica')
+  vertical-align: middle
+  z-index: 1000
+
+  +link-hover($gray-dark, $purple-light)
+
+  span
+    position: relative
+    left: 20px
+    +font(26px, $gray-dark, 'helvetica')

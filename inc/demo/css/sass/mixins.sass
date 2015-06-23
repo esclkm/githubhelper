@@ -1,0 +1,162 @@
+@import variables
+
+
+
+// Breakpoints
+=breakpoint($media)
+  @if $media == "tiny"
+    @media (max-width: 760px)
+      @content
+
+  @if $media == "narrow"
+    @media (max-width: 900px)
+      @content
+
+  @if $media == "wide"
+    @media (min-width: 901px)
+      @content
+
+  @if $media == 'non-retina'
+    @media screen and (-webkit-max-device-pixel-ratio: 1)
+      @content
+
+  @if $media == 'retina'
+    @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-resolution: 2dppx)
+      @content
+
+
+
+// Smooth hover links
+=link-hover($link-color, $hover-color)
+  a
+    color: $link-color
+    text-decoration: none
+    @content
+
+    &:hover, &:active
+      color: $hover-color
+      text-decoration: none
+
+
+
+// Retina capable sprites
+=retina-background($image, $width, $height, $position: center center, $repeat: no-repeat, $type: 'png')
+  background: asset-url("#{$image}.#{$type}") $position $repeat
+  background-size: $width $height
+  +breakpoint(retina)
+    background-image: asset-url("#{$image}@2x.#{$type}")
+
+=sprite($image, $width, $height, $type: 'png', $retina: true)
+  display: inline-block
+  width: $width
+  height: $height
+  background: url("../img/#{$image}.#{$type}") top left no-repeat
+  background-size: $width $height
+  @if $retina == true
+    +breakpoint(retina)
+      background-image: url("../img/#{$image}@2x.#{$type}")
+
+
+
+// Position shorthand
+=position($position, $top: false, $right: false, $bottom: false, $left: false)
+  position: $position
+  @if $top and $right and $bottom and $left
+    top: $top
+    right: $right
+    bottom: $bottom
+    left: $left
+  @if $top and $right and $bottom and not $left
+    top: $top
+    right: $right
+    bottom: $bottom
+    left: $right
+  @if $top and $right and not $bottom and not $left
+    top: $top
+    right: $right
+    bottom: $top
+    left: $right
+  @if $top and not $right and not $bottom and not $left
+    top: $top
+    right: $top
+    bottom: $top
+    left: $top
+
+
+
+// Polyfills and Fallbacks
+=box-sizing-border-box
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+
+=background-rgba-fallback($rgba)
+  background: rgb(red($rgba), green($rgba), blue($rgba))
+  background: $rgba
+
+
+
+// Font stacks
+=font($font-size, $font-color, $font-family: false)
+  +font-size($font-size)
+  color: $font-color
+
+  @if $font-family == 'helvetica-light'
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
+    font-weight: lighter
+    font-style: normal
+
+  @if $font-family == 'helvetica'
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
+    font-weight: normal
+    font-style: normal
+
+  @if $font-family == 'helvetica-bold'
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
+    font-weight: bold
+    font-style: normal
+
+  @if $font-family == 'andale-mono'
+    font-family: 'Andale Mono', AndaleMono, monospace
+    font-weight: normal
+    font-style: normal
+
+
+
+// Font size and REM helper
+@function to-rem($size)
+  $rem-size: $size / 16px
+  @return #{$rem-size}rem
+
+=font-size($size)
+  font-size: $size // Fallback in px
+  font-size: to-rem($size)
+
+
+
+// Reusable typography / components
+=hr($color)
+  height: 1px
+  margin: 0 0 $margin 0
+  border: none
+  border-bottom: 1px solid $color
+  clear: both
+
+=type-pad-bottom($margin: $margin)
+  margin-bottom: $margin
+
+  &:last-child
+    margin-bottom: 0
+
+=placeholder-text($color)
+  &::-webkit-input-placeholder
+    color: $color
+
+  &:-moz-placeholder
+    color: $color
+
+  &::-moz-placeholder
+    color: $color
+
+  &:-ms-input-placeholder
+    color: $color

@@ -1,0 +1,240 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: auto;
+  left: 0;
+  height: 48px;
+  line-height: 48px;
+  background: black;
+  border-bottom: 10px solid #590059;
+  font-size: 16px;
+  font-size: 1rem;
+  color: #444444;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  vertical-align: middle;
+  z-index: 1000; }
+  .header a {
+    color: #444444;
+    text-decoration: none; }
+    .header a:hover, .header a:active {
+      color: #a600a6;
+      text-decoration: none; }
+  .header span {
+    position: relative;
+    left: 20px;
+    font-size: 26px;
+    font-size: 1.625rem;
+    color: #444444;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    font-style: normal; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+html, body {
+  padding-top: 25px;
+  background-color: black;
+  font-size: 16px;
+  line-height: 1.4;
+  font-size: 16px;
+  font-size: 1rem;
+  color: white;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  -webkit-text-size-adjust: none; }
+
+h1 {
+  text-align: center;
+  font-size: 26px;
+  font-size: 1.625rem;
+  color: white;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: lighter;
+  font-style: normal;
+  margin-bottom: 20px; }
+  h1:last-child {
+    margin-bottom: 0; }
+
+h2 {
+  text-align: center;
+  font-size: 22px;
+  font-size: 1.375rem;
+  color: #aaaaaa;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: lighter;
+  font-style: normal;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #444444; }
+  h2:last-child {
+    margin-bottom: 0; }
+
+.container {
+  background-color: #333333;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 40px; }
+
+.step {
+  top: 26px;
+  position: relative;
+  margin: 0 auto 15px auto;
+  width: 545px;
+  padding: 10px; }
+  .step p {
+    margin: 5px; }
+  .step span {
+    font-family: "Courier New";
+    position: absolute;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: 150px; }
+    .step span.endpoint-hint {
+      position: relative;
+      top: auto;
+      right: auto;
+      bottom: 4px;
+      left: 170px; }
+    .step span.access-code-redeemed {
+      font-style: italic;
+      font-family: "Courier New";
+      position: relative;
+      top: auto;
+      right: auto;
+      bottom: auto;
+      left: 10px; }
+      .step span.access-code-redeemed.redeemed {
+        color: #f51616; }
+      .step span.access-code-redeemed.not-redeemed {
+        color: #1ddb2c; }
+  .step input[type=text] {
+    width: 533px;
+    margin: 0 0 20px 0;
+    padding: 5px;
+    font-size: 16px;
+    font-size: 1rem;
+    color: #444444;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    color: #444444;
+    background: white;
+    border: 1px solid #d1d1d1;
+    resize: none; }
+    .step input[type=text].error::-webkit-input-placeholder {
+      color: red; }
+    .step input[type=text].error:-moz-placeholder {
+      color: red; }
+    .step input[type=text].error::-moz-placeholder {
+      color: red; }
+    .step input[type=text].error:-ms-input-placeholder {
+      color: red; }
+    .step input[type=text]#tbx-code {
+      width: 272.5px; }
+    .step input[type=text]#tbx-endpoint {
+      width: 387px;
+      position: relative;
+      top: auto;
+      right: auto;
+      bottom: auto;
+      left: 32px;
+      margin-top: 20px; }
+
+.btn {
+  position: relative;
+  top: -30px;
+  right: auto;
+  bottom: auto;
+  left: -12px;
+  font-size: 20px;
+  font-size: 1.25rem;
+  color: white;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: lighter;
+  font-style: normal;
+  margin: 0 auto;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  line-height: 20px;
+  cursor: pointer;
+  z-index: 500;
+  background: #720072; }
+  .btn:hover {
+    background: #7d007d; }
+  .btn#btn-reset {
+    position: relative;
+    top: -90px;
+    right: auto;
+    bottom: auto;
+    left: 196px;
+    font-size: 18px;
+    font-size: 1.125rem;
+    color: white;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: lighter;
+    font-style: normal;
+    width: 120px;
+    padding: 20px 10px;
+    background: #c30000; }
+    .btn#btn-reset:hover {
+      background: #e70000; }
+
+.api-response {
+  top: 10px;
+  width: 800px;
+  padding: 20px;
+  position: relative;
+  margin: -50px auto 15px auto;
+  font-size: 14px; }
+  .api-response pre {
+    padding: 20px; }

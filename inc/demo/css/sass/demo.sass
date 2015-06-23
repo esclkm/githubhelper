@@ -1,0 +1,119 @@
+@import reset
+@import mixins
+@import header
+
+$step-width: 545px
+$step-padding: 10px
+
+$response-width: 800px
+$response-padding: 20px
+
+*
+  margin: 0
+  padding: 0
+
+html, body
+  padding-top: 25px
+  background-color: black
+  font-size: 16px
+  line-height: 1.4
+  +font(16px, $white, 'helvetica')
+  -webkit-text-size-adjust: none
+
+h1
+  text-align: center
+  +font(26px, $white, 'helvetica-light')
+  +type-pad-bottom($margin)
+
+h2
+  text-align: center
+  +font(22px, $gray-light, 'helvetica-light')
+  +type-pad-bottom($margin * 2)
+  border-bottom: 1px solid #444444 
+
+.container
+  background-color: $gray-darker
+  position: relative
+  margin-left: auto
+  margin-right: auto
+  padding-bottom: $margin * 2
+
+.step
+  top: 26px
+  position: relative
+  margin: 0 auto 15px auto
+  width: $step-width
+  padding: $step-padding
+
+  p
+    margin: 5px 
+
+  span
+    font-family: 'Courier New'
+    +position(absolute, auto, auto, auto, 150px)
+
+    &.endpoint-hint
+      +position(relative, auto, auto, 4px, 170px)
+
+    &.access-code-redeemed
+      font-style: italic
+      font-family: 'Courier New'
+      +position(relative, auto, auto, auto, 10px)
+
+      &.redeemed
+        color: #F51616
+      &.not-redeemed
+        color: #1DDB2C
+
+  input[type=text]
+    width: $step-width - 12
+    margin: 0 0 $margin 0
+    padding: $margin / 4
+    +font(16px, $gray-dark, 'helvetica')
+    color: $gray-dark
+    background: $white
+    border: 1px solid darken($white, 18%)
+    resize: none
+    &.error
+      +placeholder-text($red-light)
+    &#tbx-code
+      width: $step-width / 2
+    &#tbx-endpoint
+      width: $step-width - 158
+      +position(relative, auto, auto, auto, 32px)
+      margin-top: 20px
+
+
+.btn
+  +position(relative, -30px, auto, auto, -12px)
+  +font(20px, $white, 'helvetica-light')
+  margin: 0 auto
+  padding: $margin
+  width: 200px
+  text-align: center
+  line-height: 20px
+  cursor: pointer
+  z-index: 500
+  background: lighten($purple-dark, 5%)
+  &:hover
+    background: lighten($purple-dark, 7%)
+
+  &#btn-reset
+    +position(relative, -90px, auto, auto, 196px)
+    +font(18px, $white, 'helvetica-light')
+    width: 120px
+    padding: $margin ($margin / 2)
+    background: lighten(#a00, 5%)
+    &:hover
+      background: lighten(#a00, 12%)
+
+.api-response
+  top: 10px
+  width: $response-width
+  padding: $response-padding
+  position: relative
+  margin: -50px auto 15px auto
+  font-size: 14px
+
+  pre
+    padding: $response-padding * 1
